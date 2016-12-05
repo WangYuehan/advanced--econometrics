@@ -1,14 +1,14 @@
 *静态phillips曲线
 
-tsset rear			/*声明时间序列*/
+tsset year			/*声明时间序列*/
 scatter inf unem	/*画散点图*/
 line inf unem year	/*画线型图*/
 
-*考察inf与unem的若相关性
+*考察inf与unem的弱相关性
 reg inf L.inf		/*1阶自回归*/
 reg unem L.unem
 
-dffller inf, regress	/*DF检验*/
+dfuller inf, regress	/*DF检验*/
 dfuller unem, regress
 
 *OLS
